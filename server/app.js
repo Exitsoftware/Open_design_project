@@ -17,13 +17,13 @@ var join = require('./routes/join')
 
 var app = express();
 
+var mongoid = 'admin';
+var mongopw = 'opd1234'
 
 console.log("Server Start");
 
-
-
 // mongodb Connect
-var db = mongoose.connect('mongodb://localhost/userDB', function(err){
+var db = mongoose.connect('mongodb://'+mongoid+':'+mongopw+'@ds039155.mongolab.com:39155/opd_users', function(err){
     if(err) {
         console.err(err);
         throw err;
