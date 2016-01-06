@@ -67,12 +67,53 @@
         
          <script>
             
-            $(function(){
+            $(function(document).ready(function(){
                 $('#btn').click(function(){
-                    alert("submit!");
-                    $('#loginForm').submit();    
-                });    
+                    var inputName = $('#input_name').val();
+                    var inputId = $('#input_id').val();
+                    var inputPw = $('#input_pw').val();
+                    
+                    if(inputName == ''){
+                        alert("이름 항목이 비어있습니다.");    
+                    }
+                    else if(inputId == ''){
+                        alert("ID 값이 비어있습니다.");
+                    }
+                    else if(inputPw == ''){
+                        alert("PW 값이 비어있습니다.");
+                    }
+                    else{
+                        alert('success!');
+//                        $('#loginForm').submit();        
+                    }
+                });
             });
+             
+             
+             
+             
+             
+//             {
+//                $('#btn').click(function(){
+//                    var inputName = $('#input_name').val();
+//                    var inputId = $('#input_id').val();
+//                    var inputPw = $('#input_pw').val();
+//                    
+//                    if(inputName == ''){
+//                        alert("이름 항목이 비어있습니다.");    
+//                    }
+//                    else if(inputId == ''){
+//                        alert("ID 값이 비어있습니다.");
+//                    }
+//                    else if(inputPw == ''){
+//                        alert("PW 값이 비어있습니다.");
+//                    }
+//                    else if(inputName != '' && inputId != '' && inputPw != ''){
+//                        alert('success!');
+////                        $('#loginForm').submit();        
+//                    }
+//                });    
+//            });
                 
         </script>
         
@@ -87,19 +128,13 @@
                 </div>
                 
                 <form id="loginForm" method="post">
-                    <input class="form-control" style="display:inline;" type="text" name="name" placeholder="User Name">
-                    <input class="form-control" style="display:inline;" type="text" name="id" placeholder="ID">
-                    <input class="form-control" type="password" name="pw" placeholder="Password">
+                    <input id="input_name" class="form-control" style="display:inline;" type="text" name="name" placeholder="User Name">
+                    <input id="input_id" class="form-control" style="display:inline;" type="text" name="id" placeholder="ID">
+                    <input id="input_pw" class="form-control" type="password" name="pw" placeholder="Password">
                     <button id="btn" type="submit" class="btn btn-success">Sign up</button>
                     
                 </form>
-                <script>
-                    $('#btn').click(function(){
-                        alert("submit!2232");
-                        $('#loginForm').submit();    
-                    });
-
-                </script>
+                
             </div>
         </div>
        
